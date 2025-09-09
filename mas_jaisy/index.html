@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Evaluasi pekan satu</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #132131;
+            color: white;
+        }
+        h1, p, h2, h3 {
+            text-align: center;
+        }
+        button {
+            display: block;
+            margin: auto;
+            background-color: yellow;
+            border: 3px solid yellowgreen;
+            color: black;
+            width: auto;
+            height: 50px;
+            border-radius: 30%;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        section ul {
+            margin-bottom: 20px;
+        }
+        .block_evaluasi {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 3px solid black;
+        }
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-family: Verdana, Tahoma, sans-serif;
+            background: #fff;
+            color: black;
+        }
+        caption {
+            caption-side: top;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: yellow;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: cadetblue;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Evaluasi minggu pertama, bulan kedua</h1>
+    <p>BY: Jaisyurrahman</p>
+    <hr>
+    <h2>Warung makan Bu Sari</h2>
+
+    <div class="container">
+        <div class="block_evaluasi">
+            <div class="first-asignment">
+                <h3>Menghitung pemasukan warung dalam penjualan sehari-hari.</h3>
+                <hr>
+                <form id="formPemasukan">
+                    <label>
+                        Porsi Nasi Gudeg yang di beli:
+                        <input type="number" id="gudeg" min="0" value="0" required>
+                    </label><br><br>
+                    <label>
+                        Porsi Ayam Goreng yang di beli:
+                        <input type="number" id="ayam" min="0" value="0" required>
+                    </label><br><br>
+                    <label>
+                        Gelas Es Teh yang di beli:
+                        <input type="number" id="esteh" min="0" value="0" required>
+                    </label><br><br>
+                    <button type="submit">Hitung Total</button>
+                    <label>Porsi Nasi Gudeg Yang Terjual Hari Ini:</label>
+                </form>
+
+                <h3>Pra-hitung Total pesanan konsumen</h3>
+                <table>
+                    <caption>Data Penjualan & Diskon</caption>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Dagangan</th>
+                            <th>Total harga yang terjual (Rp)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Sebelum Diskon</td>
+                            <td id="SBDiskon"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Dapat Diskon</td>
+                            <td id="DPDiskon"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Setelah Diskon</td>
+                            <td id="STDiskon"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div id="infoLaris"></div>
+
+        <label for="pelanggan">Pilih Tipe Pelanggan:</label>
+    <select id="pelanggan">
+      <option value="biasa">Biasa (5%)</option>
+      <option value="member">Member (10%)</option>
+      <option value="vip">VIP (15%)</option>
+    </select>
+<div>
+    <label for="belanja">Total Belanja (Rp):</label>
+    <input type="number" id="belanja" min="0" placeholder="Masukkan total belanja">
+</div>
+    <button onclick="hitungDiskon()">Hitung Diskon</button>
+    <div class="hasil" id="output"></div>
+                
+        <table id="tabelMingguan">
+    <caption>Rekap Penjualan Mingguan</caption>
+    <thead>
+        <tr>
+            <th>Hari ke-</th>
+            <th>Nasi Gudeg</th>
+            <th>Ayam Goreng</th>
+            <th>Es Teh</th>
+            <th>Total Penjualan (Rp)</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Rata-rata</th>
+            <th id="rataGudeg"></th>
+            <th id="rataAyam"></th>
+            <th id="rataEsTeh"></th>
+            <th id="rataTotal"></th>
+        </tr>
+    </tfoot>
+</table>
+            </div>
+        </div>
+    </div>
+
+<h1 align="center"><strong>Soal selanjutnya bisa lihat output di console.log saja.</strong></h1>
+<p align="center"><em>Di karenakan saya membutuhkan waktu yang cukup lama hanya untuk menyelesaikan lima soal di atas (Sampe pening kepala ku dibuat oi!!!)</em></p>
+
+    <script src="jawaban.js"></script>
+</body>
+</html>
