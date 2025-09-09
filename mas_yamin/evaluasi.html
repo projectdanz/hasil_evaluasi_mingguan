@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1
+      const hargaGudeg = 8000;
+      const hargaAyam = 12000;
+      const hargaEsTeh = 3000;
+
+      const jualGudeg = 15;
+      const jualAyam = 10;
+      const jualEsTeh = 20;
+
+      const totalPendapatan =
+        hargaGudeg * jualGudeg + hargaAyam * jualAyam + hargaEsTeh * jualEsTeh;
+
+      console.log("Total pendapatan hari ini: Rp " + totalPendapatan);
+
+      //2
+      function hitungDiskon(total) {
+        if (total > 50000) {
+          return total * 0.9;
+        } else {
+          return total;
+        }
+      }
+
+      const totalSetelahDiskon = hitungDiskon(totalPendapatan);
+      console.log("total setelah diskon  " + totalSetelahDiskon);
+
+      //3
+      const penjualan = {
+        gudeg: jualGudeg,
+        ayam: jualAyam,
+        esTeh: jualEsTeh,
+      };
+
+      let menuTerlaris = "";
+      let jumlahTerlaris = 0;
+
+      for (let menu in penjualan) {
+        if (penjualan[menu] > jumlahTerlaris) {
+          jumlahTerlaris = penjualan[menu];
+          menuTerlaris = menu;
+        }
+      }
+
+      console.log(
+        "yg laris hari ini adalah: " +
+          menuTerlaris +
+          " dengan " +
+          jumlahTerlaris +
+          " porsi."
+      );
+
+      //4
+
+      var penjualanMingguan = [
+        150000, 200000, 175000, 180000, 165000, 190000, 145000,
+      ];
+
+      // hitung total penjualan
+      var totalMingguan = 0;
+      for (var i = 0; i < penjualanMingguan.length; i++) {
+        totalMingguan = totalMingguan + penjualanMingguan[i];
+      }
+
+      // hitung rata2
+      var rataRata = totalMingguan / penjualanMingguan.length;
+
+      console.log("rata2 seminggu ini: Rp " + rataRata);
+
+      // 6
+
+      var stokKaos = 50;
+      var hargaKaos = 75000;
+
+      var stokCelana = 30;
+      var hargaCelana = 150000;
+
+      var stokJaket = 15;
+      var hargaJaket = 200000;
+
+      function cekStok() {
+        console.log("stok Kaos: " + stokKaos + " pcs");
+        console.log("stok Celana: " + stokCelana + " pcs");
+        console.log("stok Jaket: " + stokJaket + " pcs");
+      }
+
+      cekStok();
+
+      //8
+      // fungsi cek
+      function cekBonus(stok, harga) {
+        if (stok < 10) {
+          var bonus = harga * 0.05;
+          console.log("bonus yang harus diberikan: Rp " + bonus);
+        } else {
+          console.log("tidak ada bonus karena stok masih cukup");
+        }
+      }
+
+      cekBonus(stokJaket, hargaJaket);
+
+      //9
+      // Fungsi cek peringatan stok
+      function cekPeringatan(stok, namaBarang) {
+        if (stok < 20) {
+          console.log(
+            "Peringatan: Stok " + namaBarang + " sudah kurang dari 20!"
+          );
+        } else {
+          console.log("Stok " + namaBarang + " masih cukup");
+        }
+      }
+
+      // Cek peringatan untuk semua barang
+      cekPeringatan(stokKaos, "kaos");
+      cekPeringatan(stokCelana, "celana");
+      cekPeringatan(stokJaket, "jaket");
+
+      //11
+
+      var nilaiSiswa = [
+        80, 75, 90, 85, 60, 70, 40, 88, 77, 69, 84, 92, 73, 65, 50, 55, 60, 56,
+        30, 0, 25, 100, 89,
+      ];
+
+      // hitung  nilai
+      var totalNilai = 0;
+      for (var i = 0; i < nilaiSiswa.length; i++) {
+        totalNilai = totalNilai + nilaiSiswa[i];
+      }
+
+      // hitung rata2
+      var rataRata = totalNilai / nilaiSiswa.length;
+
+      console.log("Rata-rata nilai kelas: " + rataRata);
+
+      //12
+      // fungsi utk menentukan grade
+      function tentukanGrade(nilai) {
+        if (nilai >= 85 && nilai <= 100) {
+          return "A";
+        } else if (nilai >= 70 && nilai <= 84) {
+          return "B";
+        } else if (nilai >= 60 && nilai <= 69) {
+          return "C";
+        } else {
+          return "D";
+        }
+      }
+
+      var nilaiContoh = 78;
+      var grade = tentukanGrade(nilaiContoh);
+      console.log("Nilai " + nilaiContoh + " mendapat grade: " + grade);
+
+      //13
+      var dataSiswa = [
+        { nama: "andi", nilai: 80 },
+        { nama: "budi", nilai: 75 },
+        { nama: "citra", nilai: 90 },
+        { nama: "dewi", nilai: 85 },
+        { nama: "eka", nilai: 60 },
+        { nama: "anto", nilai: 63 },
+        { nama: "dika", nilai: 90 },
+        { nama: "alif", nilai: 50 },
+      ];
+
+      // fungsi cari nama
+      function cariSiswa(namaDicari) {
+        for (var i = 0; i < dataSiswa.length; i++) {
+          if (dataSiswa[i].nama.toLowerCase() === namaDicari.toLowerCase()) {
+            return dataSiswa[i];
+          }
+        }
+        return null;
+      }
+
+      var hasilCari = cariSiswa("laziz");
+      if (hasilCari !== null) {
+        console.log("nama: " + hasilCari.nama + ", nilai: " + hasilCari.nilai);
+      } else {
+        console.log("siapa tuu");
+      }
+
+      //14
+
+      var nilaiSiswa = [
+        80, 75, 90, 85, 60, 70, 95, 88, 77, 69, 84, 92, 73, 65, 78, 81, 67, 74,
+      ];
+
+      var totalNilai = 0;
+      for (var i = 0; i < nilaiSiswa.length; i++) {
+        totalNilai = totalNilai + nilaiSiswa[i];
+      }
+
+      var rataRata = totalNilai / nilaiSiswa.length;
+
+      function cekReward(rata) {
+        if (rata >= 80) {
+          console.log("Selamat! Kelas Anda berhak mendapatkan reward.");
+        } else {
+          console.log("Maaf, kelas Anda belum berhak mendapatkan reward.");
+        }
+      }
+
+      cekReward(rataRata);
+
+     
+
+    </script>
+  </body>
+</html>

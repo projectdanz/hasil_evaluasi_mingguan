@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // no1-5
+      //1
+      const gudeg = 8000;
+      const ayam = 12000;
+      const teh = 3000;
+      function penjumlahan(gudegLaku, ayamLaku, tehLaku) {
+        let total = gudeg * gudegLaku + ayam * ayamLaku + teh * tehLaku;
+        return total;
+      }
+      console.log(penjumlahan(15, 10, 20));
+
+      //2
+      let total = prompt("berapa banyak belanja anda");
+      function hitungDiskon() {
+        let diskon = 0;
+        if (total >= 50000) {
+          diskon = total * 0.1;
+        }
+        return total - diskon;
+      }
+      console.log(
+        `harga akhir ${total} setelah diskon adalah ${hitungDiskon(total)}`
+      );
+      let kembalian = alert("kembalian anda " + hitungDiskon(total));
+
+      //3
+      function menuLaris() {
+        if (gudegLaku >= ayamLaku && gudeg >= tehLaku) {
+          return "gudeg";
+        } else if (ayamLaku >= gudegLaku && ayamLaku >= tehLaku) {
+          return "ayam";
+        } else {
+          return "teh";
+        }
+      }
+      console.log(`yg laris ${menuLaris()}`);
+
+      //5
+      let penjualan = [150, 200, 175, 180, 165, 190, 145];
+      for (let i = 0; i < penjualan.length; i++) {
+        total += penjualan[i];
+      }
+      let rataRata = total / penjualan.length;
+      console.log(
+        "Rata-rata penjualan selama seminggu terakhir adalah: Rp " +
+          rataRata +
+          " ribu"
+      );
+    </script>
+  </body>
+</html>
